@@ -6,7 +6,7 @@
 
 ## Install and Run
 
-* You must have `node` and `git` installed.
+* Prerequisite Executables: `node` and `git`
 
 ```
 
