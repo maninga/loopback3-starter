@@ -1,0 +1,39 @@
+{
+  "name": "ddblog",
+  "version": "1.0.0",
+  "main": "dd-srvcommon/server.js",
+  "description": "ddblog",
+  "scripts": {
+    "submoduleupdate": "git submodule update --init --recursive",
+    "submoduleinstall:dev": "git submodule foreach git checkout integration; npm install",
+    "submoduleinstall:prod": "git submodule foreach npm install --no-optional",
+    "setup": "bash dd-srvcommon/scripts/one-time-setup.sh",
+    "beforecommit": "cd dd-srvcommon && npm run beforecommit",
+    "preinstall": "npm prune",
+    "postinstall": "npm outdated || true",
+    "startp": "node dd-srvcommon/server.js blogApp",
+    "stopp": "pkill --signal SIGINT blogApp || true",
+    "start": "cd dd-srvcommon && npm start",
+    "test": "echo running-main-repo-test && cd dd-srvcommon && npm test"
+  },
+  "dependencies": {
+    "bluebird": "3.5.0",
+    "body-parser": "1.17.2",
+    "cls-hooked": "4.1.6",
+    "is-stream": "1.1.0",
+    "lodash": "4.17.4",
+    "loopback-context": "3.1.0",
+    "moment-timezone": "0.5.13",
+    "pg": "6.2.3",
+    "pg-copy-streams": "1.2.0",
+    "request": "2.81.0",
+    "request-promise": "4.2.1",
+    "stream-array": "1.1.2"
+  },
+  "optionalDependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "",
+    "url": ""
+  }
+}

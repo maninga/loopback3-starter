@@ -1,0 +1,42 @@
+{
+  "name": "dd-srvcommon",
+  "version": "3.0.0",
+  "main": "server.js",
+  "scripts": {
+    "beforecommit": "gulp precommit",
+    "start": "gulp devserver",
+    "preinstall": "npm prune",
+    "postinstall": "npm outdated || true",
+    "test": "echo intern-client config=config/test/intern"
+  },
+  "dependencies": {
+    "body-parser": "1.17.2",
+    "chalk": "1.1.3",
+    "compression": "1.6.2",
+    "connect-redis": "3.3.0",
+    "express-session": "1.15.3",
+    "lodash": "4.17.4",
+    "loopback": "3.8.0",
+    "loopback-boot": "2.24.1",
+    "loopback-connector-postgresql": "3.0.1",
+    "serve-favicon": "2.4.3",
+    "strongloop": "6.0.3"
+  },
+  "optionalDependencies": {
+    "loopback-component-explorer": "4.2.0"
+  },
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-eslint": "4.0.0",
+    "gulp-if": "2.0.2",
+    "gulp-nodemon": "2.2.1",
+    "gulp-sequence": "0.4.6",
+    "intern": "3.4.4"
+  },
+  "private": true,
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/dd/dd-srvcommon"
+  }
+}

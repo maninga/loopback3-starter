@@ -1,0 +1,66 @@
+{
+  "host": "0.0.0.0",
+  "dbConf": {
+    "host": "dd.dd.com",
+    "database": "dd",
+    "password": "secret",
+    "name": "db",
+    "connector": "postgresql",
+    "user": "admin"
+  },
+  "remoting": {
+    "rest": {
+      "normalizeHttpPath": false,
+      "xml": false
+    },
+    "json": {
+      "strict": false,
+      "limit": "100kb"
+    },
+    "urlencoded": {
+      "extended": true,
+      "limit": "100kb"
+    },
+    "cors": false,
+    "errorHandler": {
+      "debug": false
+    }
+  },
+  "legacyExplorer": false,
+  "enableAPIExplorer": false,
+  "enableAuth": true,
+  "keycloak": {
+    "realm": "dd",
+    "auth-server-url": "http://auth-dd.dd.com/auth",
+    "ssl-required": "external",
+    "resource": "blog",
+    "credentials": {
+      "secret": "private token from kc admin page"
+    },
+    "use-resource-role-mappings": true
+  },
+  "logConf": {
+    "storageServerDomain": "dd-elk.weave.local",
+    "storageServerPort": 6516,
+    "enableStorage": true,
+    "rqstLogLevelForStorage": "info",
+    "rqstLogLevelForConsole": "warn",
+    "bootLogLevelForStorage": "debug",
+    "bootLogLevelForConsole": "warn"
+  },
+  "apps": {
+    "common": {
+      "schema": "dd",
+      "tz": "Asia/Kolkata"
+    },
+    "blog": {
+      "category": "blog",
+      "name": "blog",
+      "isTenantSpecific": true,
+      "port": 3001,
+      "restApiRoot": "/blog/api",
+      "url": "https://env.dd.com/blog",
+      "middlewareApiRoot": "/blog/mapi"
+    }
+  }
+}

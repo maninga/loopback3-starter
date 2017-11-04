@@ -1,0 +1,27 @@
+{
+  "name": "Blog",
+  "plural": "Blog",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": false
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "postgresql": {
+        "columnName": "name"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

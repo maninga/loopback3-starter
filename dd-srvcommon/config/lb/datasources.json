@@ -1,0 +1,6 @@
+{
+	"memoryDB": {
+		"name": "memoryDB",
+		"connector": "memory"
+	}
+}

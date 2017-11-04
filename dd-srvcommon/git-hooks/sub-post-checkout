@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+#!/usr/bin/env bash -x
+
+if [ "$3" = 0 ]; then
+#	echo '>>> It is a file checkout so skipping the post checkout hook'
+	exit 0
+fi
+
+echo -n '>>> starting Sub Post Checkout hook'
+
+printf  "\n\n%sPost Checkout Command Start%s\n" \
+		'---------------' \
+		'---------------'
+
+result_std_out_err="$(script -q /dev/null npm install 2>&1)"
+result_success_status=$?
+
+printf  "%s\n%s`npm install` Command End%s\n\n" \
+		"$result_std_out_err" \
+		'---------------' \
+		'---------------'
+
+echo '>>> The command exit status: ' "$result_success_status"
+
+if [ $result_success_status = 0 ]; then
+	echo '>>> Congrats, all Sub Post Checkout checks passed.'
+	exit 0
+fi
+
+#Play bell as an alert --- cool :-)
+echo -e '>>> [WARN] The validation checks for Sub post checkout failed.\a'
+
+exit 0;

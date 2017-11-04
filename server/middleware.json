@@ -1,0 +1,11 @@
+{
+  "routes": {
+    "./middleware/dummy-app-specific-middleware": {
+      "methods": [
+        "GET"
+      ],
+      "paths": "/mapi/dummy-app-specific-middleware",
+      "enabled": true
+    }
+  }
+}

@@ -1,0 +1,25 @@
+#!groovy
+
+properties([[$class: 'jenkins.model.BuildDiscarderProperty', strategy: [$class: 'LogRotator', numToKeepStr: '5']]])
+
+node {
+	try {
+        stage 'Checkout'
+        checkout scm
+        //TODO to move this to on container start
+        stage 'DB-Update'
+            sh 'dd-srvcommon/scripts/update-db.sh'
+        stage 'Build Image'
+            //TODO - Need to check how to do this??
+            //cd ~/dockerfiles/dd-app
+            //git pull origin master
+            //docker build -t registry.dd.com/ddblog:$BRANCH_NAME --build-arg BRANCH=$BRANCH_NAME --build-arg REPO=ddblog --build-arg CHECK_LATEST=true .
+        stage 'Push Image'
+            //docker push registry.dd.com/ddblog:$BRANCH_NAME
+        stage 'Deploy'
+            //update image on kubernetes
+        slackSend color:'good', message: "Successfully pushed ${env.JOB_NAME}"
+	} catch (e) {
+		slackSend color:'danger', message: "Error in build+deploy ${env.JOB_NAME} ${e}"
+	}
+}

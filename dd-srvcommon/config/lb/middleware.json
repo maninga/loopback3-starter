@@ -1,0 +1,58 @@
+{
+  "initial:before": {
+    "./../../middleware/log-req-matrix": {},
+    "./../../middleware/healthcheck": {},
+    "loopback#favicon": {}
+  },
+  "initial": {
+    "compression": {},
+    "cors": {
+      "params": {
+        "origin": true,
+        "credentials": true,
+        "maxAge": 86400
+      }
+    },
+    "loopback-context#per-request": {
+      "params": {
+        "enableHttpContext": true
+      }
+    }
+  },
+  "session": {
+    "./../../middleware/session": {
+      "params": {
+        "secret": "some secret key",
+        "resave": false,
+        "saveUninitialized": true,
+        "store": {
+          "module_NA": "connect-redis",
+          "params": {
+            "url": "redis://kv.dd.com",
+            "pass": "Some super secret key"
+          }
+        }
+      }
+    }
+  },
+  "session:after": {},
+  "auth": {},
+  "parse": {
+    "body-parser#json": {
+      "params": {
+        "limit": "50mB"
+      }
+    },
+    "body-parser#urlencoded": {
+      "params": {
+        "extended": true,
+        "limit": "1mB"
+      }
+    }
+  },
+  "routes": {},
+  "final": {},
+  "final:after": {
+    "errorhandler": {}
+  }
+}

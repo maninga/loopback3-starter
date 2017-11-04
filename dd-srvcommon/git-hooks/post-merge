@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+#!/usr/bin/env bash -x
+
+echo -n '>>> starting Post Merge hook'
+
+printf  "\n\n%sPost Merge Command Start%s\n" \
+		'---------------' \
+		'---------------'
+
+result_std_out_err="$(script -q /dev/null npm install 2>&1)"
+result_success_status=$?
+
+printf  "%s\n%s`npm install` Command End%s\n\n" \
+		"$result_std_out_err" \
+		'---------------' \
+		'---------------'
+
+if [ $result_success_status = 0 ]; then
+	result_std_out_err="$(script -q /dev/null npm run submoduleinstall:dev 2>&1)"
+	result_success_status=$?
+fi
+
+printf  "%s\n%s`npm run submoduleinstall:dev` Command End%s\n\n" \
+		"$result_std_out_err" \
+		'---------------' \
+		'---------------'
+
+echo '>>> The command exit status: ' "$result_success_status"
+
+if [ $result_success_status = 0 ]; then
+	echo '>>> Congrats, all Post Merge checks passed.'
+	exit 0
+fi
+
+#Play bell as an alert --- cool :-)
+echo -e '>>> [WARN] The validation checks for Post Merge failed.\a'
+
+exit 0;
