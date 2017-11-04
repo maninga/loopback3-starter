@@ -1,4 +1,4 @@
 [submodule "dd-srvcommon"]
 	path = dd-srvcommon
-	url = git@github.com:roomville/dd-srvcommon.git
-	branch = integration
+	url = https://github.com/dopeddude/dd-srvcommon.git
+	branch = master
