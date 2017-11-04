@@ -17,3 +17,5 @@
     $ npm start
 
 ```
+
+* Browser through http://0.0.0.0:3001 and http://0.0.0.0:3001/explorer
