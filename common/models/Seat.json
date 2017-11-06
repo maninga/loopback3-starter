@@ -1,0 +1,34 @@
+{
+  "name": "Seat",
+  "plural": "Seat",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": false
+    },
+    "seq": {
+      "type": "string",
+      "required": true,
+      "postgresql": {
+        "columnName": "seq"
+      }
+    },
+    "status": {
+      "type": "string",
+      "required": true,
+      "postgresql": {
+        "columnName": "status"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

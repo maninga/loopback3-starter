@@ -1,6 +1,6 @@
 {
-  "name": "Blog",
-  "plural": "Blog",
+  "name": "Audi",
+  "plural": "Audi",
   "base": "PersistedModel",
   "idInjection": false,
   "options": {

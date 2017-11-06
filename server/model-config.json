@@ -11,7 +11,19 @@
       "../common/mixins"
     ]
   },
-  "Blog": {
+  "Cinema": {
+    "dataSource": "memoryDB",
+    "public": true
+  },
+  "Audi": {
+    "dataSource": "memoryDB",
+    "public": true
+  },
+  "Show": {
+    "dataSource": "memoryDB",
+    "public": true
+  },
+  "Seat": {
     "dataSource": "memoryDB",
     "public": true
   }
