@@ -10,8 +10,8 @@
 
 ```
 
-    $ git clone https://github.com/maninga/loobback3-starter.git
-    $ cd lb3-starter
+    $ git clone https://github.com/maninga/loopback3-starter.git
+    $ cd loopback3-starter
     $ git submodule add https://github.com/maninga/dd-srvcommon.git dd-srvcommon
     $ git submodule foreach npm install
     $ npm run setup
