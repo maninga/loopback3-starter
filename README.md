@@ -13,6 +13,7 @@
     $ git clone https://github.com/maninga/loopback3-starter.git
     $ cd loopback3-starter
     $ git submodule add https://github.com/maninga/dd-srvcommon.git dd-srvcommon
+    $ git submodule update --init --recursive
     $ git submodule foreach npm install
     $ npm run setup
     $ npm start
