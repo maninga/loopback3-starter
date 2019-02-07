@@ -1,4 +1,4 @@
 [submodule "dd-srvcommon"]
 	path = dd-srvcommon
-	url = https://github.com/dopeddude/dd-srvcommon.git
+	url = https://github.com/maninga/dd-srvcommon.git
 	branch = master
