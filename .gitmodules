@@ -1,0 +1,3 @@
+[submodule "dd-srvcommon"]
+	path = dd-srvcommon
+	url = https://github.com/maninga/dd-srvcommon.git
